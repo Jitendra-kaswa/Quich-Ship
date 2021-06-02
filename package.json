@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Jitendra-kaswa/Quick-Ship#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cassandra-driver": "^4.6.3",
     "cloudinary": "^1.25.2",
     "concurrently": "^6.2.0",
     "cookie-parser": "^1.4.5",

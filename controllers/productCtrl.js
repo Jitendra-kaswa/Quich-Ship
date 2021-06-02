@@ -12,7 +12,7 @@ class APIfeatures {
 
        const excludedFields = ['page', 'sort', 'limit']
        excludedFields.forEach(el => delete(queryObj[el]))
-       
+
        let queryStr = JSON.stringify(queryObj)
        queryStr = queryStr.replace(/\b(gte|gt|lt|lte|regex)\b/g, match => '$' + match)
 
@@ -21,7 +21,7 @@ class APIfeatures {
     //    lt = lesser than
     //    gt = greater than
        this.query.find(JSON.parse(queryStr))
-         
+
        return this;
     }
 
@@ -58,7 +58,7 @@ const productCtrl = {
                 result: products.length,
                 products: products
             })
-            
+
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

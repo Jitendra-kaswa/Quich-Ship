@@ -11,7 +11,7 @@ const userCtrl = {
             const user = await Users.findOne({email})
             if(user) return res.status(400).json({msg: "The email already exists."})
 
-            if(password.length < 6) 
+            if(password.length < 6)
                 return res.status(400).json({msg: "Password is at least 6 characters long."})
 
             // Password Encryption
@@ -89,7 +89,6 @@ const userCtrl = {
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
-        
     },
     getUser: async (req, res) =>{
         try {
@@ -128,7 +127,7 @@ const userCtrl = {
 
 
 const createAccessToken = (user) =>{
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '11m'})
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1d'})
 }
 const createRefreshToken = (user) =>{
     return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '7d'})
