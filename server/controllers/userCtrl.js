@@ -12,7 +12,7 @@ const userCtrl = {
             if(user) return res.status(400).json({msg: "The email already exists."})
 
             if(password.length < 6)
-                return res.status(400).json({msg: "Password is at least 6 characters long."})
+                return res.status(400).json({msg: "Password should be at least 6 characters long."})
 
             // Password Encryption
             const passwordHash = await bcrypt.hash(password, 10)
@@ -127,7 +127,7 @@ const userCtrl = {
 
 
 const createAccessToken = (user) =>{
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1d'})
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '30m'})
 }
 const createRefreshToken = (user) =>{
     return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '7d'})

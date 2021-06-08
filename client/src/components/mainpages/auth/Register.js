@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import { useHistory } from "react-router-dom";
 
 function Register() {
     const [user, setUser] = useState({
         name:'', email:'', password: ''
     })
-
+    let history = useHistory();
     const onChangeInput = e =>{
         const {name, value} = e.target;
         setUser({...user, [name]:value})
@@ -19,7 +20,8 @@ function Register() {
 
             localStorage.setItem('firstLogin', true)
 
-            window.location.href = "/";
+            // window.location.href = "/";
+            history.push("/login");
         } catch (err) {
             alert(err.response.data.msg)
         }
