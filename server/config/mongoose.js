@@ -1,15 +1,15 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/Quick-Ship');
+const connectDB = async() => {
+    await mongoose.connect(process.env.MONGO_URI,{
+        useNewUrlParser:true,
+        useCreateIndex:true,
+        useUnifiedTopology:true,
+        useFindAndModify:true
+    })
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.log(err));
+}
 
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
-
-
-db.once('open', function(){
-    console.log('Connected to Database :: MongoDB');
-});
-
-
-module.exports = db;
+module.exports = connectDB;

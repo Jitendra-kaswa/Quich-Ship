@@ -5,7 +5,7 @@ import Close from './icon/close.svg'
 import Cart from './icon/cart.svg'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-// import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 function Header() {
     const state = useContext(GlobalState)
@@ -13,7 +13,7 @@ function Header() {
     const [isAdmin] = state.userAPI.isAdmin
     const [cart] = state.userAPI.cart
     const [menu, setMenu] = useState(false)
-    // const history = useHistory();
+    const history = useHistory();
     const logoutUser = async () =>{
         await axios.get('/user/logout')
 

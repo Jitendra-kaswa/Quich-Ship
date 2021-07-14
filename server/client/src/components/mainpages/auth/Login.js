@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-// import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 function Login() {
     const [user, setUser] = useState({
         email:'', password: ''
     })
-    // let history = useHistory();
+    let history = useHistory();
     const onChangeInput = e =>{
         const {name, value} = e.target;
         setUser({...user, [name]:value})
