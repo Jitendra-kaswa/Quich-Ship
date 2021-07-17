@@ -5,10 +5,10 @@ function Loading() {
     return (
         <div className="load-page">
             <div className="loader">
-                <div>
+                {/* <div>
                     <div>
                         <div>
-                            <div>
+                            <div> */}
                                 <div>
                                     <div>
                                         <div>
@@ -16,10 +16,10 @@ function Loading() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            {/* </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -40,3 +40,8 @@ header ul li:hover{
     padding: 5px 7px;
     font-size: 10px;
 }
+
+.main-name{
+    /* color:#034f84; */
+    color:#2121a7;
+}
